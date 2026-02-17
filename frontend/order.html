@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order and Delivery</title>
+</head>
+<body>
+    
+    <header class="navbar">
+        <h1>Order Summary</h1>
+    </header>
+
+    <div class="product_card">
+        <p id="productName"></p>
+        <p id="pickupLocation"></p>
+
+        <label for="orderQty">Quantity:</label>
+        <input type="number" id="orderQty" name="orderQty" placeholder="Quantity (kg)">
+
+        <label for="deliveryLocation">Delivery Location:</label>
+        <input type="text" id="deliveryLocation" name="deliveryLocation" placeholder="Delivery Location">
+
+        <button onclick="requestDelivery()">Request Delivery</button>
+    </div>
+
+    <script src="delivery.js"></script>
+</body>
+</html>

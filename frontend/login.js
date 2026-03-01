@@ -15,8 +15,10 @@
         // Redirect based on role
         if (user.role === "farmer") {
           window.location.href = "farmer.html";
-        } else {
+        } else if (user.role === "buyer") {
           window.location.href = "buyer.html";
+        } else if (user.role === "transporter") {
+          window.location.href = "transporter.html";
         }
       } else {
         alert("Invalid email or password");

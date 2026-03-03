@@ -1,19 +1,25 @@
-let products = JSON.parse(localStorage.getItem("products")) || [
-  {
-    name: "Tomatoes",
-    quantity: 500,
-    price: 2500,
-    location: "Nakuru",
-    availability: "Available"
-  },
-  {
-    name: "Carrots",
-    quantity: 300,
-    price: 1500,
-    location: "Thika",
-    availability: "Available"
-  }
-];
+let products = JSON.parse(localStorage.getItem("products"));
+
+if (!products) {
+  products = [
+    {
+      name: "Tomatoes",
+      quantity: 500,
+      price: 2500,
+      location: "Nakuru",
+      availability: "Available"
+    },
+    {
+      name: "Carrots",
+      quantity: 300,
+      price: 1500,
+      location: "Thika",
+      availability: "Available"
+    }
+  ];
+
+  localStorage.setItem("products", JSON.stringify(products));
+}
 
 
 function renderMarketplace() {

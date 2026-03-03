@@ -91,16 +91,17 @@ function deleteProduct(index) {
 
 
 const form = document.getElementById("productForm");
+
 if (form) {
-  form.addEventListener("submit", event => {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const product = {
-      name: name.value,
-      quantity: quantity.value,
-      price: price.value,
-      location: location.value,
-      availability: availability.value
+      name: document.getElementById("name").value,
+      quantity: document.getElementById("quantity").value,
+      price: document.getElementById("price").value,
+      location: document.getElementById("location").value,
+      availability: document.getElementById("availability").value
     };
 
     products.push(product);

@@ -6,7 +6,7 @@
 - Member 2: Backend Developer - Brinner Wainaina
 - Member 3: Frontend Developer - Stephen Tony
 - Member 4: System Designer - Clyde Tirrah
-- Member 5: DevOps & QA - Sanaipei Tendi
+- Member 5: DevOps & QA - Sanaipei Tenkes
 
 **Documents** → Check `docs/` folder  
 **Backend** → Java Spring Boot + MySQL  

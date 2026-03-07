@@ -31,17 +31,41 @@ function renderMarketplace() {
   products
     .filter(p => p.availability === "Available")
     .forEach((product, index) => {
+
       list.innerHTML += `
-        <div class="product-card">
-          <h3>${product.name}</h3>
-          <p>Price: KES ${product.price} / kg</p>
-          <p>Quantity: ${product.quantity} kg</p>
-          <p>Location: ${product.location}</p>
-          <span class="status">${product.availability}</span>
-          <button onclick="startOrder(${index})">
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+
+        <div class="p-4">
+
+          <h3 class="text-lg font-bold text-green-700 mb-2">
+            ${product.name}
+          </h3>
+
+          <p class="text-gray-600">
+            Price: KES ${product.price} / kg
+          </p>
+
+          <p class="text-gray-600">
+            Quantity: ${product.quantity} kg
+          </p>
+
+          <p class="text-gray-600">
+            Location: ${product.location}
+          </p>
+
+          <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
+            ${product.availability}
+          </span>
+
+          <button
+            onclick="startOrder(${index})"
+            class="mt-4 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition font-semibold"
+          >
             Order / Negotiate
           </button>
+
         </div>
+      </div>
       `;
     });
 }

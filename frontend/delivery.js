@@ -60,3 +60,16 @@ function clearDeliveryForm() {
   document.getElementById("orderQty").value = "";
   document.getElementById("deliveryLocation").value = "";
 }
+
+deliveries.push({
+  product: product.name,
+  pickup: product.location,
+  destination,
+  status: "Pending",
+  transporter: null,
+  requester: {
+    name: "John Doe",
+    email: "john@example.com",
+    phone: "0712345678"
+  }
+});

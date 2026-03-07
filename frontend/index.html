@@ -1,34 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AgroConnect</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroConnect</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="login.html">I am a farmer</a></li>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </nav>
-        </header>
+<body class="font-sans">
 
-        <section id="hero">
-            <img src="">
-            <h1>AgroConnect</h1>
-            <p>Unlocking the potential of small-scale farmers with best-in-class inputs, financing, insurance, and training</p>
-            <a href="marketplace.html">View Products</a>
-        </section>
+<!-- NAVBAR -->
+<header class="bg-green-700 text-white">
+<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
 
-        <section>
-            <h2>what we do</h2>
-            <p>AgroConnect provides a platform for small-scale farmers to access quality inputs, financing, insurance, and training to improve their productivity and profitability.</p>
-            <a href="about.html">Learn More</a>
-        </section>
-    </body>
+<h1 class="text-2xl font-bold">AgroConnect</h1>
+
+<nav>
+<ul class="flex gap-6">
+<li><a href="index.html" class="hover:text-green-200">Home</a></li>
+<li><a href="login.html" class="hover:text-green-200">I am a Farmer</a></li>
+<li><a href="marketplace.html" class="hover:text-green-200">Marketplace</a></li>
+<li><a href="about.html" class="hover:text-green-200">About Us</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<!-- HERO -->
+<section class="bg-[url('farm.jpg')] bg-cover bg-center h-[80vh] flex items-center justify-center text-center text-white">
+
+<div class="bg-black/50 p-10 rounded-xl max-w-2xl">
+
+<h1 class="text-4xl md:text-5xl font-bold mb-4">
+Empowering Farmers Through Technology
+</h1>
+
+<p class="mb-6 text-lg">
+AgroConnect helps small-scale farmers access quality farm inputs,
+financing, insurance, and agricultural training to improve productivity.
+</p>
+
+<div class="flex justify-center gap-4">
+<a href="marketplace.html"
+class="bg-green-600 px-6 py-3 rounded-lg hover:bg-green-700">
+View Products
+</a>
+
+<a href="login.html"
+class="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200">
+Join as Farmer
+</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- WHAT WE DO -->
+<section class="py-16 bg-gray-100 text-center">
+
+<div class="max-w-4xl mx-auto px-6">
+
+<h2 class="text-3xl font-bold mb-6">What We Do</h2>
+
+<p class="text-gray-600 mb-6">
+AgroConnect provides a digital platform where farmers can access
+quality inputs, financial services, agricultural insurance, and
+training to improve farm productivity and profitability.
+</p>
+
+<a href="about.html"
+class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
+Learn More
+</a>
+
+</div>
+
+</section>
+
+<footer class="bg-gray-900 text-white text-center py-4">
+<p>© 2026 AgroConnect. All Rights Reserved.</p>
+</footer>
+
+</body>
 </html>

@@ -1,68 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | AgroConnect</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
-    <header>
-        <nav>
-            <ul>
-                <li><a href="login.html">I am a farmer</a></li>
-                <li><a href="buyer.html">Marketplace</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="about" class="about-container">
-        <h1>Who We Are</h1>
-        <p>AgroConnect is a digital agricultural marketplace built to transform how farmers, buyers, and transport providers interact. We exist to bridge the gap between agricultural producers and the market, creating a transparent, efficient, and trustworthy ecosystem for agricultural trade.</p>
-        
-        <h2>Our Background</h2>
-        <p>Small-scale farmers form the backbone of the agricultural sector, yet many continue to face serious challenges. Limited access to reliable markets, price exploitation by middlemen, poor logistics coordination, and lack of real-time market information often reduce farmer income and weaken the entire agricultural value chain.
-At the same time, buyers struggle to find trusted suppliers, consistent produce quality, and efficient delivery solutions.
+<body class="font-sans">
 
-AgroConnect was created in response to these challenges.</p>
+<!-- NAVBAR -->
+<header class="bg-green-700 text-white">
+<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
 
-        <h2>The Problem We Solve</h2>
-        <p>The agricultural market lacks a centralized digital platform that directly connects farmers, buyers, and transport providers in a secure and transparent way. This disconnect leads to inefficiencies, higher food prices, lost income opportunities, and reduced trust among stakeholders.</p>
+<h1 class="text-2xl font-bold">AgroConnect</h1>
 
-        <h2>Our Solution</h2>
-        <p>AgroConnect is a web-based platform designed to simplify and digitize agricultural trade by:
+<nav>
+<ul class="flex gap-6">
+<li><a href="index.html" class="hover:text-green-200">Home</a></li>
+<li><a href="login.html" class="hover:text-green-200">I am a Farmer</a></li>
+<li><a href="marketplace.html" class="hover:text-green-200">Marketplace</a></li>
+<li><a href="about.html" class="hover:text-green-200">About Us</a></li>
+</ul>
+</nav>
 
-Connecting farmers directly with buyers
+</div>
+</header>
 
-Enabling transparent pricing and fair negotiations
+<!-- HERO -->
+<section class="bg-[url('farmers.jpg')] bg-cover bg-center h-[60vh] flex items-center justify-center text-center text-white">
 
-Coordinating logistics and delivery services
+<div class="bg-black/50 p-10 rounded-xl max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">Who We Are</h1>
+<p class="text-lg">
+Building a smarter agricultural marketplace that connects farmers,
+buyers, and logistics providers.
+</p>
+</div>
 
-Providing administrative oversight, analytics, and reporting
+</section>
 
-By removing unnecessary intermediaries, AgroConnect empowers farmers, builds buyer confidence, and strengthens agricultural supply chains.</p>
+<!-- INTRO -->
+<section class="py-16 bg-gray-100">
+<div class="max-w-5xl mx-auto px-6 text-center">
 
-        <h2>What We Offer</h2>
-        <p>Our platform supports:
+<p class="text-lg text-gray-700">
+AgroConnect is a digital agricultural marketplace designed to transform
+how farmers, buyers, and transport providers interact. Our platform
+creates a transparent, efficient, and trustworthy ecosystem for
+agricultural trade.
+</p>
 
-Secure user registration and role management
+</div>
+</section>
 
-Product listing and marketplace browsing
+<!-- BACKGROUND -->
+<section class="py-16">
+<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-Order placement, negotiation, and tracking
+<img src="small-farm.jpg" class="rounded-xl shadow-lg">
 
-Delivery coordination with transport providers
+<div>
+<h2 class="text-3xl font-bold mb-4">Our Background</h2>
 
-Reviews, ratings, and performance reporting</p>
+<p class="text-gray-600 mb-4">
+Small-scale farmers form the backbone of agriculture, yet many face
+limited access to reliable markets, unfair pricing from middlemen,
+poor logistics coordination, and limited market information.
+</p>
 
-        <h2>Our Mission</h2>
-        <p>To empower farmers, connect markets, and create a transparent, efficient, and sustainable digital agricultural ecosystem.</p>
+<p class="text-gray-600">
+Buyers also struggle to find trusted suppliers and reliable delivery
+solutions. AgroConnect was created to solve these challenges.
+</p>
 
-        <h2>Our Vision</h2>
-        <p>To become a leading digital marketplace that strengthens agricultural value chains and improves livelihoods through technology.</p>
+</div>
 
-        <a href="register.html?role=farmer">Work With Us</a>
+</div>
+</section>
+
+<!-- PROBLEM -->
+<section class="py-16 bg-gray-100">
+<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+<div>
+<h2 class="text-3xl font-bold mb-4">The Problem We Solve</h2>
+
+<p class="text-gray-600">
+Agricultural trade lacks a centralized platform connecting farmers,
+buyers, and transport providers. This disconnect causes inefficiencies,
+higher food prices, lost income opportunities, and reduced trust
+across the supply chain.
+</p>
+
+</div>
+
+<img src="market.jpg" class="rounded-xl shadow-lg">
+
+</div>
+</section>
+
+<!-- SOLUTION -->
+<section class="py-16">
+<div class="max-w-5xl mx-auto px-6 text-center">
+
+<h2 class="text-3xl font-bold mb-6">Our Solution</h2>
+
+<p class="text-gray-600 mb-6">
+AgroConnect digitizes agricultural trade by directly connecting
+farmers with buyers, enabling transparent pricing, coordinating
+delivery services, and providing administrative oversight.
+</p>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-16 bg-gray-100">
+
+<div class="max-w-6xl mx-auto px-6">
+
+<h2 class="text-3xl font-bold text-center mb-10">What We Offer</h2>
+
+<div class="grid md:grid-cols-3 gap-8 text-center">
+
+<div class="bg-white p-6 rounded-xl shadow">
+<img src="farmer-icon.jpg" class="mx-auto mb-4 w-20">
+<h3 class="font-bold text-lg mb-2">Marketplace</h3>
+<p class="text-gray-600">Farmers list products and buyers browse available produce.</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow">
+<img src="logistics.jpg" class="mx-auto mb-4 w-20">
+<h3 class="font-bold text-lg mb-2">Delivery Coordination</h3>
+<p class="text-gray-600">Transport providers handle logistics and deliveries.</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow">
+<img src="analytics.jpg" class="mx-auto mb-4 w-20">
+<h3 class="font-bold text-lg mb-2">Reporting & Insights</h3>
+<p class="text-gray-600">Admins track performance and platform activity.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MISSION -->
+<section class="py-16">
+<div class="max-w-4xl mx-auto px-6 text-center">
+
+<h2 class="text-3xl font-bold mb-4">Our Mission</h2>
+<p class="text-gray-600 mb-8">
+To empower farmers, connect markets, and build a transparent,
+efficient agricultural ecosystem powered by technology.
+</p>
+
+<h2 class="text-3xl font-bold mb-4">Our Vision</h2>
+<p class="text-gray-600">
+To become a leading digital marketplace strengthening agricultural
+value chains and improving livelihoods across farming communities.
+</p>
+
+<a href="register.html?role=farmer"
+class="inline-block mt-8 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
+Work With Us
+</a>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white text-center py-6">
+<p>© 2026 AgroConnect | Connecting Farmers to Markets</p>
+</footer>
+
 </body>
 </html>

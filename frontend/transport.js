@@ -32,9 +32,9 @@ function renderDeliveries() {
                 ${d.product}
             </h3>
 
-            <p class="text-gray-600">📍 Pickup: ${d.pickup}</p>
-            <p class="text-gray-600">🚚 Destination: ${d.destination}</p>
-            <p class="text-gray-600">📦 Quantity: ${d.quantity || "N/A"} kg</p>
+            <p class="text-gray-600"> Pickup: ${d.pickup}</p>
+            <p class="text-gray-600"> Destination: ${d.destination}</p>
+            <p class="text-gray-600"> Quantity: ${d.quantity || "N/A"} kg</p>
 
             <!-- STATUS -->
             <span class="inline-block mt-3 px-3 py-1 rounded-full text-sm ${statusColor}">
@@ -44,8 +44,8 @@ function renderDeliveries() {
             <!-- CONTACT INFO -->
             <div class="mt-4 space-y-2 text-sm text-gray-700">
 
-                <p>📞 Phone: ${d.requester?.phone || "Not provided"}</p>
-                <p>✉ Email: ${d.requester?.email || "Not provided"}</p>
+                <p> Phone: ${d.requester?.phone || "Not provided"}</p>
+                <p> Email: ${d.requester?.email || "Not provided"}</p>
 
             </div>
 

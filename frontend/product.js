@@ -70,18 +70,60 @@ function renderMarketplace() {
     });
 }
 
-
 function searchProducts() {
+
   const keyword = document
     .getElementById("searchInput")
     .value
     .toLowerCase();
 
-  document.querySelectorAll(".product-card").forEach(card => {
-    card.style.display = card.innerText.toLowerCase().includes(keyword)
-      ? "block"
-      : "none";
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(keyword) ||
+    product.location.toLowerCase().includes(keyword)
+  );
+
+  const list = document.getElementById("productList");
+  list.innerHTML = "";
+
+  filteredProducts.forEach((product, index) => {
+
+    list.innerHTML += `
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+
+        <div class="p-4">
+
+          <h3 class="text-lg font-bold text-green-700 mb-2">
+            ${product.name}
+          </h3>
+
+          <p class="text-gray-600">
+            Price: KES ${product.price} / kg
+          </p>
+
+          <p class="text-gray-600">
+            Quantity: ${product.quantity} kg
+          </p>
+
+          <p class="text-gray-600">
+            Location: ${product.location}
+          </p>
+
+          <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
+            ${product.availability}
+          </span>
+
+          <button
+            onclick="startOrder(${index})"
+            class="mt-4 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition font-semibold"
+          >
+            Order / Negotiate
+          </button>
+
+        </div>
+      </div>
+    `;
   });
+
 }
 
 

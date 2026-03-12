@@ -38,3 +38,5 @@ loginForm.addEventListener("submit", async (e) => {
     alert("An error occurred while logging in. Please try again.");
   }
 });
+
+// Optional: Check if user is already logged in on page load

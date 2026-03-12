@@ -1,26 +1,39 @@
- const loginForm = document.getElementById("loginForm");
+const loginForm = document.getElementById("loginForm");
 
-    loginForm.addEventListener("submit", e => {
-      e.preventDefault();
+loginForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-      const users = JSON.parse(localStorage.getItem("users")) || [];
-      const user = users.find(u => u.email === email && u.password === password);
-
-      if (user) {
-        localStorage.setItem("currentUser", JSON.stringify(user));
-
-        // Redirect based on role
-        if (user.role === "farmer") {
-          window.location.href = "farmer.html";
-        } else if (user.role === "buyer") {
-          window.location.href = "buyer.html";
-        } else if (user.role === "transporter") {
-          window.location.href = "transporter.html";
-        }
-      } else {
-        alert("Invalid email or password");
-      }
+  try {
+    const res = await fetch("http://localhost:5000/api/login", { // your backend URL
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
     });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.message || "Login failed");
+      return;
+    }
+
+    // Save current user data (optional: could include token from backend)
+    localStorage.setItem("currentUser", JSON.stringify(data.user));
+
+    // Redirect based on role
+    if (data.user.role === "farmer") {
+      window.location.href = "farmer.html";
+    } else if (data.user.role === "buyer") {
+      window.location.href = "buyer.html";
+    } else if (data.user.role === "transporter") {
+      window.location.href = "transporter.html";
+    }
+
+  } catch (error) {
+    console.error("Error logging in:", error);
+    alert("An error occurred while logging in. Please try again.");
+  }
+});

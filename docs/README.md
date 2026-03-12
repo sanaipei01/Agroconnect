@@ -2,7 +2,7 @@
 
 **Team 5 Members Project**
 
-- Member 1: Project Manager / Business Analyst (You) - Munyoki Ephraim
+- Member 1: Project Manager / Business Analyst - Munyoki Ephraim
 - Member 2: Backend Developer - Brinner Wainaina
 - Member 3: Frontend Developer - Stephen Tony
 - Member 4: System Designer - Clyde Tirrah

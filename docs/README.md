@@ -9,7 +9,7 @@
 - Member 5: DevOps & QA - Sanaipei Tenkes
 
 **Documents** → Check `docs/` folder  
-**Backend** → Java Spring Boot + MySQL  
-**Frontend** → Vue.js  
+**Backend** → Java Spring Boot + MongoDB + Node.JS  
+**Frontend** → JavaScript + HTML + TailwindCSS  
 
 **How to run the project** → See docs/Setup.md (coming soon)

@@ -11,20 +11,33 @@
 
 <!-- NAVBAR -->
 <header class="bg-green-700 text-white">
-<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
 
-<h1 class="text-2xl font-bold">AgroConnect</h1>
+    <!-- Left -->
+    <h1 class="text-2xl font-bold">AgroConnect</h1>
 
-<nav>
-<ul class="flex gap-6">
-<li><a href="index.html" class="hover:text-green-200">Home</a></li>
-<li><a href="login.html" class="hover:text-green-200">I am a Farmer</a></li>
-<li><a href="marketplace.html" class="hover:text-green-200">Marketplace</a></li>
-<li><a href="about.html" class="hover:text-green-200">About Us</a></li>
-</ul>
-</nav>
+    <!-- Middle Nav Links -->
+    <nav>
+      <ul class="flex gap-6">
+        <li><a href="index.html" class="hover:text-green-200">Home</a></li>
+        <li><a href="login.html" class="hover:text-green-200">I am a Farmer</a></li>
+        <li><a href="marketplace.html" class="hover:text-green-200">Marketplace</a></li>
+        <li><a href="about.html" class="hover:text-green-200">About Us</a></li>
+      </ul>
+    </nav>
 
-</div>
+    <!-- Right: User + Logout -->
+    <div class="flex items-center gap-4">
+      <span id="username" class="font-medium"></span>
+
+      <button 
+        id="logoutBtn"
+        class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg">
+        Logout
+      </button>
+    </div>
+
+  </div>
 </header>
 
 <!-- PAGE HEADER -->
@@ -87,6 +100,25 @@ View Details
 <p>© 2026 AgroConnect Marketplace</p>
 
 </footer>
+
+<script>
+  // protect page
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user) {
+    window.location.href = "login.html";
+  }
+
+  // show username
+  document.getElementById("username").textContent = user.name;
+
+  // logout
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.location.href = "login.html";
+  });
+</script>
 
 <script src="product.js"></script>
 

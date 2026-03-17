@@ -11,8 +11,22 @@
 <body class="bg-gray-100 font-sans">
 
 <!-- HEADER -->
-<header class="bg-green-700 text-white p-6 text-center">
-<h2 class="text-2xl font-bold">Farm Product Listings</h2>
+<header class="bg-green-700 text-white px-6 py-4 flex justify-between items-center">
+
+  <!-- Left: Title -->
+  <h2 class="text-2xl font-bold">Farm Product Listings</h2>
+
+  <!-- Right: User + Logout -->
+  <div class="flex items-center gap-4">
+    <span id="username" class="font-medium"></span>
+
+    <button 
+      id="logoutBtn" 
+      class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg">
+      Logout
+    </button>
+  </div>
+
 </header>
 
 <!-- FORM SECTION -->
@@ -101,6 +115,22 @@ class="grid md:grid-cols-3 gap-6">
 </div>
 
 </section>
+
+<script>
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.location.href = "login.html";
+  });
+
+  // show username
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
+    document.getElementById("username").textContent = user.name;
+  }
+</script>
 
 <script src="product.js"></script>
 

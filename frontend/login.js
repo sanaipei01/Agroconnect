@@ -28,7 +28,7 @@ loginForm.addEventListener("submit", async (e) => {
     if (data.user.role === "farmer") {
       window.location.href = "farmer.html";
     } else if (data.user.role === "buyer") {
-      window.location.href = "buyer.html";
+      window.location.href = "marketplace.html";
     } else if (data.user.role === "transporter") {
       window.location.href = "transporter.html";
     }

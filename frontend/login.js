@@ -22,7 +22,7 @@ loginForm.addEventListener("submit", async (e) => {
 
     // Save current user data (optional: could include token from backend)
     localStorage.setItem("token", data.token); // if you want to save the token
-    localStorage.setItem("currentUser", JSON.stringify(data.user));
+    localStorage.setItem("user", JSON.stringify(data.user));
 
     // Redirect based on role
     if (data.user.role === "farmer") {

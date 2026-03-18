@@ -4,6 +4,7 @@ const cors = require("cors");
 const path = require("path");
 const authRoutes = require("./routes/auth");
 const productRoutes = require("./routes/product");
+const orderRoutes = require("./routes/order");
 
 const app = express();
 
@@ -18,6 +19,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/agrisystem")
     
     app.use("/api/auth", authRoutes);
     app.use("/api/products", productRoutes);
+    app.use("/api/orders", orderRoutes);
 
     app.listen(5000, () => {
         console.log("server running on port 5000");

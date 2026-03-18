@@ -145,28 +145,145 @@ function searchProducts() {
 }
 
 
-// Render farmer products
-async function renderFarmerProducts() {
-  const list = document.getElementById("farmerProducts");
+// Render farmer orders
+async function renderFarmerOrders() {
+  const list = document.getElementById("farmerOrders");
   if (!list) return;
 
-  // Fetch farmer products from backend
-  farmerProducts = await fetchFarmerProducts();
+  const token = getToken();
+  const user = getCurrentUser();
 
-  list.innerHTML = "";
+  if (!token || !user || user.role !== "farmer") {
+    return;
+  }
 
-  farmerProducts.forEach((product, index) => {
-    list.innerHTML += `
-      <div class="product-card">
-        <h3>${product.name}</h3>
-        <p>Price: KES ${product.price}</p>
-        <p>Quantity: ${product.quantity} kg</p>
-        <p>Location: ${product.location}</p>
-        <p>Status: ${product.availability}</p>
-        <button onclick="deleteProduct('${product._id}')">Delete</button>
+  try {
+    const response = await fetch(`${API_BASE}/orders/farmer`, {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch orders");
+    }
+
+    const orders = await response.json();
+
+    list.innerHTML = "";
+
+    if (orders.length === 0) {
+      list.innerHTML = `
+        <div class="col-span-full text-center py-8 bg-white rounded-lg shadow">
+          <p class="text-gray-500">No orders yet.</p>
+          <p class="text-gray-400 text-sm mt-1">Orders for your products will appear here.</p>
+        </div>
+      `;
+      return;
+    }
+
+    orders.forEach((order) => {
+      const statusColor = getOrderStatusColor(order.status);
+
+      list.innerHTML += `
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-lg font-bold text-green-700">${order.product.name}</h3>
+            <span class="px-3 py-1 rounded-full text-sm ${statusColor}">${order.status}</span>
+          </div>
+
+          <div class="space-y-2 text-sm text-gray-600">
+            <p><strong>Quantity:</strong> ${order.quantity} kg</p>
+            <p><strong>Total Price:</strong> KES ${order.totalPrice}</p>
+            <p><strong>Delivery Location:</strong> ${order.deliveryLocation}</p>
+            <p><strong>Buyer:</strong> ${order.buyer.name} (${order.buyer.email})</p>
+            ${order.transporter ? `<p><strong>Transporter:</strong> ${order.transporter.name}</p>` : ''}
+            ${order.notes ? `<p><strong>Notes:</strong> ${order.notes}</p>` : ''}
+          </div>
+
+          <div class="mt-4 flex gap-2">
+            ${order.status === "pending" ? `
+              <button
+                onclick="updateOrderStatus('${order._id}', 'accepted')"
+                class="flex-1 bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+                Accept Order
+              </button>
+              <button
+                onclick="updateOrderStatus('${order._id}', 'cancelled')"
+                class="flex-1 bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">
+                Reject Order
+              </button>
+            ` : order.status === "accepted" ? `
+              <button
+                onclick="updateOrderStatus('${order._id}', 'in-transit')"
+                class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+                Mark as In Transit
+              </button>
+            ` : `
+              <p class="text-center text-gray-500 text-sm w-full">Order ${order.status}</p>
+            `}
+          </div>
+        </div>
+      `;
+    });
+  } catch (error) {
+    console.error("Error fetching farmer orders:", error);
+    list.innerHTML = `
+      <div class="col-span-full text-center py-8 bg-white rounded-lg shadow">
+        <p class="text-red-500">Failed to load orders.</p>
       </div>
     `;
-  });
+  }
+}
+
+// Update order status (for farmers)
+async function updateOrderStatus(orderId, status) {
+  const token = getToken();
+
+  if (!token) {
+    alert("Please login first");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE}/orders/${orderId}/status`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify({ status })
+    });
+
+    if (!response.ok) {
+      const data = await response.json();
+      throw new Error(data.error || "Failed to update order status");
+    }
+
+    alert(`Order ${status === "cancelled" ? "rejected" : "updated"} successfully!`);
+    await renderFarmerOrders();
+  } catch (error) {
+    console.error("Error updating order status:", error);
+    alert("Failed to update order: " + error.message);
+  }
+}
+
+// Get order status color
+function getOrderStatusColor(status) {
+  switch (status) {
+    case "pending":
+      return "bg-yellow-100 text-yellow-700";
+    case "accepted":
+      return "bg-blue-100 text-blue-700";
+    case "in-transit":
+      return "bg-orange-100 text-orange-700";
+    case "delivered":
+      return "bg-green-100 text-green-700";
+    case "cancelled":
+      return "bg-red-100 text-red-700";
+    default:
+      return "bg-gray-100 text-gray-700";
+  }
 }
 
 
@@ -257,5 +374,9 @@ function startOrder(index) {
 }
 
 
-renderMarketplace();
-renderFarmerProducts();
+// Initialize when page loads
+document.addEventListener("DOMContentLoaded", async function() {
+  await renderMarketplace();
+  await renderFarmerProducts();
+  await renderFarmerOrders();
+});

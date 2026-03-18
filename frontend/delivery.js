@@ -28,6 +28,31 @@ function calculateTotal() {
   document.getElementById("totalPrice").innerText = `KES ${total}`;
 }
 
+/* Resolve product ID (handles stale localStorage products) */
+async function resolveProductId(selectedProduct) {
+  if (!selectedProduct) return null;
+  if (selectedProduct._id || selectedProduct.id) {
+    return selectedProduct._id || selectedProduct.id;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE}/products`);
+    if (!response.ok) return null;
+
+    const products = await response.json();
+    const match = products.find(p =>
+      p.name === selectedProduct.name &&
+      p.location === selectedProduct.location &&
+      p.price === selectedProduct.price
+    );
+
+    return match?._id || null;
+  } catch (err) {
+    console.error("Error resolving product ID:", err);
+    return null;
+  }
+}
+
 /* REQUEST DELIVERY */
 async function requestDelivery() {
   if (!product) {
@@ -56,6 +81,12 @@ async function requestDelivery() {
     return;
   }
 
+  const productId = await resolveProductId(product);
+  if (!productId) {
+    alert("Unable to resolve product. Please go back to the marketplace and try again.");
+    return;
+  }
+
   try {
     const response = await fetch(`${API_BASE}/orders`, {
       method: "POST",
@@ -64,7 +95,7 @@ async function requestDelivery() {
         "Authorization": `Bearer ${token}`
       },
       body: JSON.stringify({
-        productId: product._id,
+        productId: productId,
         quantity: quantity,
         deliveryLocation: deliveryLocation,
         notes: notes

@@ -366,9 +366,15 @@ if (form) {
 
 
 function startOrder(index) {
+  const selected = products[index];
+  const normalized = {
+    ...selected,
+    _id: selected._id || selected.id
+  };
+
   localStorage.setItem(
     "selectedProduct",
-    JSON.stringify(products[index])
+    JSON.stringify(normalized)
   );
   window.location.href = "order.html";
 }

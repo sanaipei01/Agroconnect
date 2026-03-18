@@ -132,6 +132,13 @@ class="grid md:grid-cols-2 gap-6">
 <script>
   const logoutBtn = document.getElementById("logoutBtn");
 
+  // Validate login + role
+  const savedUser = JSON.parse(localStorage.getItem("user"));
+  const savedToken = localStorage.getItem("token");
+  if (!savedToken || !savedUser || savedUser.role !== "farmer") {
+    window.location.href = "login.html";
+  }
+
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -139,9 +146,8 @@ class="grid md:grid-cols-2 gap-6">
   });
 
   // show username
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user) {
-    document.getElementById("username").textContent = user.name;
+  if (savedUser) {
+    document.getElementById("username").textContent = savedUser.name;
   }
 </script>
 

@@ -32,6 +32,7 @@ async function fetchFarmerProducts() {
   const user = getCurrentUser();
 
   if (!token || !user || user.role !== "farmer") {
+    console.warn("Not logged in as farmer; skipping farmer product fetch.");
     return [];
   }
 
@@ -43,7 +44,8 @@ async function fetchFarmerProducts() {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to fetch farmer products");
+      const errText = await response.text();
+      throw new Error(`Failed to fetch farmer products (${response.status}): ${errText}`);
     }
 
     return await response.json();
@@ -56,6 +58,55 @@ async function fetchFarmerProducts() {
 // Global products array
 let products = [];
 let farmerProducts = [];
+
+// Render farmer's products (for farmer dashboard)
+async function renderFarmerProducts() {
+  const list = document.getElementById("farmerProducts");
+  if (!list) return;
+
+  const token = getToken();
+  const user = getCurrentUser();
+
+  if (!token || !user || user.role !== "farmer") {
+    list.innerHTML = `
+      <div class="col-span-full text-center py-8 bg-white rounded-lg shadow">
+        <p class="text-gray-500">Please log in as a farmer to see your products.</p>
+      </div>
+    `;
+    return;
+  }
+
+  farmerProducts = await fetchFarmerProducts();
+
+  list.innerHTML = "";
+
+  if (!farmerProducts || farmerProducts.length === 0) {
+    list.innerHTML = `
+      <div class="col-span-full text-center py-8 bg-white rounded-lg shadow">
+        <p class="text-gray-500">You have no products yet.</p>
+        <p class="text-gray-400 text-sm mt-1">Add a product above to see it listed here.</p>
+      </div>
+    `;
+    return;
+  }
+
+  farmerProducts.forEach((product) => {
+    list.innerHTML += `
+      <div class="product-card bg-white rounded-xl shadow p-6">
+        <h3 class="text-lg font-bold text-green-700">${product.name}</h3>
+        <p class="text-gray-600">Price: KES ${product.price}</p>
+        <p class="text-gray-600">Quantity: ${product.quantity} kg</p>
+        <p class="text-gray-600">Location: ${product.location}</p>
+        <p class="text-gray-600">Status: ${product.availability}</p>
+        <button
+          onclick="deleteProduct('${product._id}')"
+          class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
+          Delete
+        </button>
+      </div>
+    `;
+  });
+}
 
 // Render marketplace products
 async function renderMarketplace() {

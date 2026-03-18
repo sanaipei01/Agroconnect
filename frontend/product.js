@@ -365,8 +365,14 @@ if (form) {
 }
 
 
-function startOrder(index) {
-  const selected = products[index];
+function startOrder(productId) {
+  const selected = products.find(p => p._id === productId || p.id === productId);
+
+  if (!selected) {
+    alert("Unable to start order: product not found.");
+    return;
+  }
+
   const normalized = {
     ...selected,
     _id: selected._id || selected.id

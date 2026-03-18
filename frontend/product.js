@@ -36,7 +36,7 @@ async function fetchFarmerProducts() {
   }
 
   try {
-    const response = await fetch(`${API_BASE}/products/farmer/${user._id}`, {
+    const response = await fetch(`${API_BASE}/products/farmer/${user.id}`, {
       headers: {
         "Authorization": `Bearer ${token}`
       }

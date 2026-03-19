@@ -3,11 +3,21 @@ AgroConnect is a centralized web-based digital marketplace designed to bridge th
 
 Core Features
 
-The system is built around a role-based access control model (Farmer, Buyer, Transporter, Admin) to ensure a streamlined supply chain:User Management: Secure registration and login with specific dashboards for different stakeholder roles.Product Management: Tools for farmers to list produce (price, quantity, location) and for buyers to search/browse listings.Order & Negotiation: A direct communication channel allowing buyers to place orders and farmers to accept, reject, or negotiate prices.Integrated Logistics: A dedicated transporter role that can accept delivery requests and provide real-time status updates and estimated delivery times.Trust System: A mutual review and rating system between buyers and farmers to enhance platform transparency and visibility.Administrative Oversight: A backend suite for user management, system analytics, and dispute resolution.
+The system is built around a role-based access control model (Farmer, Buyer, Transporter, Admin) to ensure a streamlined supply chain:
+User Management: Secure registration and login with specific dashboards for different stakeholder roles.
+Product Management: Tools for farmers to list produce (price, quantity, location) and for buyers to search/browse listings.
+Order & Negotiation: A direct communication channel allowing buyers to place orders and farmers to accept, reject, or negotiate prices.
+Integrated Logistics: A dedicated transporter role that can accept delivery requests and provide real-time status updates and estimated delivery times.
+Trust System: A mutual review and rating system between buyers and farmers to enhance platform transparency and visibility.
+Administrative Oversight: A backend suite for user management, system analytics, and dispute resolution.
 
 Project Structure & Tech Stack
 
-The project is organized into a modular architecture following SOLID design principles (e.g., separate classes for order processing and notifications).Frontend: Built using JavaScript, HTML, and TailwindCSS, utilizing a "mobile-first" responsive design for field accessibility.Backend: Powered by Node.js with RESTful APIs documented via Swagger/OpenAPI.Database: MongoDB for flexible data storage of products, users, and orders.DevOps: Containerized deployment using Docker and a CI/CD pipeline managed via GitHub Actions.
+The project is organized into a modular architecture following SOLID design principles (e.g., separate classes for order processing and notifications).
+Frontend: Built using JavaScript, HTML, and TailwindCSS, utilizing a "mobile-first" responsive design for field accessibility.
+Backend: Powered by Node.js with RESTful APIs documented via Swagger/OpenAPI.
+Database: MongoDB for flexible data storage of products, users, and orders.
+DevOps: Containerized deployment using Docker and a CI/CD pipeline managed via GitHub Actions.
 
 Verification and Validation
 

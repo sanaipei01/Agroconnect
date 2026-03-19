@@ -18,6 +18,7 @@ The system is built around a role-based access control model (Farmer, Buyer, Tra
 6.Administrative Oversight: A backend suite for user management, system analytics, and dispute resolution.
 
 
+
 Project Structure & Tech Stack
 
 The project is organized into a modular architecture following SOLID design principles (e.g., separate classes for order processing and notifications).
@@ -28,6 +29,7 @@ The project is organized into a modular architecture following SOLID design prin
 3.Database: MongoDB for flexible data storage of products, users, and orders.
 
 4.DevOps: Containerized deployment using Docker and a CI/CD pipeline managed via GitHub Actions.
+
 
 
 Verification and Validation

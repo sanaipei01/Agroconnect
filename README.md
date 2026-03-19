@@ -4,8 +4,11 @@ AgroConnect is a centralized web-based digital marketplace designed to bridge th
 Core Features
 
 The system is built around a role-based access control model (Farmer, Buyer, Transporter, Admin) to ensure a streamlined supply chain:
+
 1.User Management: Secure registration and login with specific dashboards for different stakeholder roles.
+
 2.Product Management: Tools for farmers to list produce (price, quantity, location) and for buyers to search/browse listings.
+
 3.Order & Negotiation: A direct communication channel allowing buyers to place orders and farmers to accept, reject, or negotiate prices.
 4.Integrated Logistics: A dedicated transporter role that can accept delivery requests and provide real-time status updates and estimated delivery times.
 5.Trust System: A mutual review and rating system between buyers and farmers to enhance platform transparency and visibility.

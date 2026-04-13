@@ -1,0 +1,160 @@
+<svg viewBox="0 0 1100 780" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f2027"/>
+      <stop offset="100%" style="stop-color:#203a43"/>
+    </linearGradient>
+    <linearGradient id="systemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a2a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0d2318;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="ucGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71"/>
+      <stop offset="100%" style="stop-color:#27ae60"/>
+    </linearGradient>
+    <linearGradient id="ucGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+    <linearGradient id="ucGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e67e22"/>
+      <stop offset="100%" style="stop-color:#d35400"/>
+    </linearGradient>
+    <linearGradient id="ucGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6"/>
+      <stop offset="100%" style="stop-color:#8e44ad"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="780" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="550" y="38" text-anchor="middle" fill="#2ecc71" font-size="22" font-weight="bold" filter="url(#glow)">AgroConnect – Use Case Diagram</text>
+  <line x1="80" y1="50" x2="1020" y2="50" stroke="#2ecc71" stroke-width="1.5" stroke-opacity="0.4"/>
+
+  <!-- System Boundary -->
+  <rect x="220" y="65" width="660" height="680" rx="10" fill="url(#systemGrad)" stroke="#2ecc71" stroke-width="2" stroke-dasharray="10,4" filter="url(#shadow)"/>
+  <text x="550" y="90" text-anchor="middle" fill="#2ecc71" font-size="15" font-weight="bold">«system» AgroConnect Platform</text>
+
+  <!-- ============ USE CASES ============ -->
+  <!-- Auth Group -->
+  <ellipse cx="390" cy="140" rx="95" ry="26" fill="url(#ucGrad)" filter="url(#shadow)"/>
+  <text x="390" y="145" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Register / Login</text>
+
+  <!-- Product Group -->
+  <ellipse cx="390" cy="220" rx="95" ry="26" fill="url(#ucGrad)" filter="url(#shadow)"/>
+  <text x="390" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold">List Product</text>
+
+  <ellipse cx="390" cy="300" rx="95" ry="26" fill="url(#ucGrad)" filter="url(#shadow)"/>
+  <text x="390" y="305" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Update / Delete Product</text>
+
+  <ellipse cx="390" cy="380" rx="95" ry="26" fill="url(#ucGrad2)" filter="url(#shadow)"/>
+  <text x="390" y="385" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Browse Products</text>
+
+  <ellipse cx="390" cy="460" rx="95" ry="26" fill="url(#ucGrad2)" filter="url(#shadow)"/>
+  <text x="390" y="465" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Place Order</text>
+
+  <ellipse cx="390" cy="540" rx="95" ry="26" fill="url(#ucGrad2)" filter="url(#shadow)"/>
+  <text x="390" y="545" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Cancel Order</text>
+
+  <!-- Farmer actions right side -->
+  <ellipse cx="710" cy="220" rx="95" ry="26" fill="url(#ucGrad)" filter="url(#shadow)"/>
+  <text x="710" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Accept / Reject Order</text>
+
+  <ellipse cx="710" cy="300" rx="95" ry="26" fill="url(#ucGrad)" filter="url(#shadow)"/>
+  <text x="710" y="305" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Update Order Status</text>
+
+  <!-- Transporter -->
+  <ellipse cx="710" cy="400" rx="95" ry="26" fill="url(#ucGrad3)" filter="url(#shadow)"/>
+  <text x="710" y="405" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Accept Delivery</text>
+
+  <ellipse cx="710" cy="480" rx="95" ry="26" fill="url(#ucGrad3)" filter="url(#shadow)"/>
+  <text x="710" y="485" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Update Delivery Status</text>
+
+  <!-- Admin -->
+  <ellipse cx="550" cy="620" rx="95" ry="26" fill="url(#ucGrad4)" filter="url(#shadow)"/>
+  <text x="550" y="625" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Manage Users</text>
+
+  <ellipse cx="550" cy="690" rx="95" ry="26" fill="url(#ucGrad4)" filter="url(#shadow)"/>
+  <text x="550" y="695" text-anchor="middle" fill="white" font-size="12" font-weight="bold">View Analytics</text>
+
+  <!-- ============ ACTORS ============ -->
+  <!-- Farmer Actor (left) -->
+  <g transform="translate(80,195)">
+    <circle cx="0" cy="-25" r="18" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+    <line x1="0" y1="-7" x2="0" y2="35" stroke="#2ecc71" stroke-width="3"/>
+    <line x1="-22" y1="12" x2="22" y2="12" stroke="#2ecc71" stroke-width="3"/>
+    <line x1="0" y1="35" x2="-18" y2="65" stroke="#2ecc71" stroke-width="3"/>
+    <line x1="0" y1="35" x2="18" y2="65" stroke="#2ecc71" stroke-width="3"/>
+    <text x="0" y="85" text-anchor="middle" fill="#2ecc71" font-size="13" font-weight="bold">Farmer</text>
+  </g>
+
+  <!-- Buyer Actor (left below) -->
+  <g transform="translate(80,455)">
+    <circle cx="0" cy="-25" r="18" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+    <line x1="0" y1="-7" x2="0" y2="35" stroke="#3498db" stroke-width="3"/>
+    <line x1="-22" y1="12" x2="22" y2="12" stroke="#3498db" stroke-width="3"/>
+    <line x1="0" y1="35" x2="-18" y2="65" stroke="#3498db" stroke-width="3"/>
+    <line x1="0" y1="35" x2="18" y2="65" stroke="#3498db" stroke-width="3"/>
+    <text x="0" y="85" text-anchor="middle" fill="#3498db" font-size="13" font-weight="bold">Buyer</text>
+  </g>
+
+  <!-- Transporter Actor (right) -->
+  <g transform="translate(1020,420)">
+    <circle cx="0" cy="-25" r="18" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
+    <line x1="0" y1="-7" x2="0" y2="35" stroke="#e67e22" stroke-width="3"/>
+    <line x1="-22" y1="12" x2="22" y2="12" stroke="#e67e22" stroke-width="3"/>
+    <line x1="0" y1="35" x2="-18" y2="65" stroke="#e67e22" stroke-width="3"/>
+    <line x1="0" y1="35" x2="18" y2="65" stroke="#e67e22" stroke-width="3"/>
+    <text x="0" y="85" text-anchor="middle" fill="#e67e22" font-size="13" font-weight="bold">Transporter</text>
+  </g>
+
+  <!-- Admin Actor (bottom right) -->
+  <g transform="translate(1020,630)">
+    <circle cx="0" cy="-25" r="18" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+    <line x1="0" y1="-7" x2="0" y2="35" stroke="#9b59b6" stroke-width="3"/>
+    <line x1="-22" y1="12" x2="22" y2="12" stroke="#9b59b6" stroke-width="3"/>
+    <line x1="0" y1="35" x2="-18" y2="65" stroke="#9b59b6" stroke-width="3"/>
+    <line x1="0" y1="35" x2="18" y2="65" stroke="#9b59b6" stroke-width="3"/>
+    <text x="0" y="85" text-anchor="middle" fill="#9b59b6" font-size="13" font-weight="bold">Admin</text>
+  </g>
+
+  <!-- ============ ASSOCIATION LINES ============ -->
+  <!-- Farmer to use cases -->
+  <line x1="98" y1="170" x2="295" y2="140" stroke="#2ecc71" stroke-width="1.5" stroke-opacity="0.7"/>
+  <line x1="98" y1="170" x2="295" y2="220" stroke="#2ecc71" stroke-width="1.5" stroke-opacity="0.7"/>
+  <line x1="98" y1="170" x2="295" y2="300" stroke="#2ecc71" stroke-width="1.5" stroke-opacity="0.7"/>
+  <!-- Farmer to right side -->
+  <line x1="98" y1="170" x2="615" y2="220" stroke="#2ecc71" stroke-width="1.5" stroke-opacity="0.7"/>
+  <line x1="98" y1="170" x2="615" y2="300" stroke="#2ecc71" stroke-width="1.5" stroke-opacity="0.7"/>
+
+  <!-- Buyer to use cases -->
+  <line x1="98" y1="430" x2="295" y2="140" stroke="#3498db" stroke-width="1.5" stroke-opacity="0.7"/>
+  <line x1="98" y1="430" x2="295" y2="380" stroke="#3498db" stroke-width="1.5" stroke-opacity="0.7"/>
+  <line x1="98" y1="430" x2="295" y2="460" stroke="#3498db" stroke-width="1.5" stroke-opacity="0.7"/>
+  <line x1="98" y1="430" x2="295" y2="540" stroke="#3498db" stroke-width="1.5" stroke-opacity="0.7"/>
+
+  <!-- Transporter to use cases -->
+  <line x1="1020" y1="395" x2="805" y2="400" stroke="#e67e22" stroke-width="1.5" stroke-opacity="0.7"/>
+  <line x1="1020" y1="395" x2="805" y2="480" stroke="#e67e22" stroke-width="1.5" stroke-opacity="0.7"/>
+
+  <!-- Admin to use cases -->
+  <line x1="1020" y1="605" x2="645" y2="620" stroke="#9b59b6" stroke-width="1.5" stroke-opacity="0.7"/>
+  <line x1="1020" y1="605" x2="645" y2="690" stroke="#9b59b6" stroke-width="1.5" stroke-opacity="0.7"/>
+
+  <!-- Legend -->
+  <rect x="225" y="595" width="160" height="70" rx="6" fill="#1a2a1a" stroke="#2ecc71" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="305" y="612" text-anchor="middle" fill="#aaa" font-size="11" font-weight="bold">Legend</text>
+  <ellipse cx="250" cy="628" rx="18" ry="10" fill="#2ecc71"/>
+  <text x="275" y="632" fill="#ccc" font-size="10">Farmer Use Case</text>
+  <ellipse cx="250" cy="650" rx="18" ry="10" fill="#3498db"/>
+  <text x="275" y="654" fill="#ccc" font-size="10">Buyer Use Case</text>
+</svg>

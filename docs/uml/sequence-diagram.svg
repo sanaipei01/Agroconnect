@@ -1,0 +1,253 @@
+<svg viewBox="0 0 1100 980" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f2027"/>
+      <stop offset="100%" style="stop-color:#203a43"/>
+    </linearGradient>
+    <linearGradient id="lifeBuyer" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60"/>
+      <stop offset="100%" style="stop-color:#1e8449"/>
+    </linearGradient>
+    <linearGradient id="lifeFrontend" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2980b9"/>
+      <stop offset="100%" style="stop-color:#1a6493"/>
+    </linearGradient>
+    <linearGradient id="lifeAPI" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d35400"/>
+      <stop offset="100%" style="stop-color:#a04000"/>
+    </linearGradient>
+    <linearGradient id="lifeDB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8e44ad"/>
+      <stop offset="100%" style="stop-color:#6c3483"/>
+    </linearGradient>
+    <linearGradient id="lifeFarmer" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a085"/>
+      <stop offset="100%" style="stop-color:#0e6655"/>
+    </linearGradient>
+    <linearGradient id="lifeTransporter" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c0392b"/>
+      <stop offset="100%" style="stop-color:#922b21"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowR" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#aaa"/>
+    </marker>
+    <marker id="arrowL" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#aaa"/>
+    </marker>
+    <marker id="arrowRG" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrowLG" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrowRB" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3498db"/>
+    </marker>
+    <marker id="arrowLB" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#3498db"/>
+    </marker>
+    <marker id="arrowRO" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e67e22"/>
+    </marker>
+    <marker id="arrowRP" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9b59b6"/>
+    </marker>
+    <marker id="arrowRC" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1abc9c"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="980" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="550" y="38" text-anchor="middle" fill="#2ecc71" font-size="22" font-weight="bold" filter="url(#glow)">AgroConnect – Sequence Diagram (Order Placement)</text>
+  <line x1="60" y1="50" x2="1040" y2="50" stroke="#2ecc71" stroke-width="1.5" stroke-opacity="0.4"/>
+
+  <!-- ===== ACTOR LIFELINE HEADERS ===== -->
+  <!-- Buyer -->
+  <rect x="55" y="65" width="110" height="55" rx="8" fill="url(#lifeBuyer)" filter="url(#shadow)"/>
+  <text x="110" y="87" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Buyer</text>
+  <text x="110" y="104" text-anchor="middle" fill="#d4f5e2" font-size="10">:User</text>
+
+  <!-- Frontend -->
+  <rect x="215" y="65" width="120" height="55" rx="8" fill="url(#lifeFrontend)" filter="url(#shadow)"/>
+  <text x="275" y="87" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Frontend</text>
+  <text x="275" y="104" text-anchor="middle" fill="#d4eeff" font-size="10">:React App</text>
+
+  <!-- API Server -->
+  <rect x="385" y="65" width="130" height="55" rx="8" fill="url(#lifeAPI)" filter="url(#shadow)"/>
+  <text x="450" y="87" text-anchor="middle" fill="white" font-size="13" font-weight="bold">API Server</text>
+  <text x="450" y="104" text-anchor="middle" fill="#ffe0c0" font-size="10">:Express/Node</text>
+
+  <!-- Database -->
+  <rect x="560" y="65" width="120" height="55" rx="8" fill="url(#lifeDB)" filter="url(#shadow)"/>
+  <text x="620" y="87" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Database</text>
+  <text x="620" y="104" text-anchor="middle" fill="#e0c0ff" font-size="10">:MongoDB</text>
+
+  <!-- Farmer -->
+  <rect x="730" y="65" width="120" height="55" rx="8" fill="url(#lifeFarmer)" filter="url(#shadow)"/>
+  <text x="790" y="87" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Farmer</text>
+  <text x="790" y="104" text-anchor="middle" fill="#b8fff4" font-size="10">:User</text>
+
+  <!-- Transporter -->
+  <rect x="900" y="65" width="130" height="55" rx="8" fill="url(#lifeTransporter)" filter="url(#shadow)"/>
+  <text x="965" y="87" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Transporter</text>
+  <text x="965" y="104" text-anchor="middle" fill="#ffc0c0" font-size="10">:User</text>
+
+  <!-- ===== LIFELINES (vertical dashed) ===== -->
+  <line x1="110" y1="120" x2="110" y2="960" stroke="#2ecc71" stroke-width="1.5" stroke-dasharray="8,5" stroke-opacity="0.5"/>
+  <line x1="275" y1="120" x2="275" y2="960" stroke="#3498db" stroke-width="1.5" stroke-dasharray="8,5" stroke-opacity="0.5"/>
+  <line x1="450" y1="120" x2="450" y2="960" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="8,5" stroke-opacity="0.5"/>
+  <line x1="620" y1="120" x2="620" y2="960" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="8,5" stroke-opacity="0.5"/>
+  <line x1="790" y1="120" x2="790" y2="960" stroke="#1abc9c" stroke-width="1.5" stroke-dasharray="8,5" stroke-opacity="0.5"/>
+  <line x1="965" y1="120" x2="965" y2="960" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="8,5" stroke-opacity="0.5"/>
+
+  <!-- Activation Boxes -->
+  <rect x="104" y="145" width="12" height="700" rx="3" fill="#2ecc71" fill-opacity="0.3" stroke="#2ecc71" stroke-width="1"/>
+  <rect x="269" y="168" width="12" height="650" rx="3" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <rect x="444" y="195" width="12" height="600" rx="3" fill="#e67e22" fill-opacity="0.3" stroke="#e67e22" stroke-width="1"/>
+  <rect x="614" y="220" width="12" height="300" rx="3" fill="#9b59b6" fill-opacity="0.3" stroke="#9b59b6" stroke-width="1"/>
+  <rect x="784" y="390" width="12" height="200" rx="3" fill="#1abc9c" fill-opacity="0.3" stroke="#1abc9c" stroke-width="1"/>
+  <rect x="959" y="610" width="12" height="160" rx="3" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+
+  <!-- ===== MESSAGES ===== -->
+  <!-- 1. Buyer -> Frontend: POST /auth/login -->
+  <line x1="116" y1="155" x2="269" y2="155" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowRG)"/>
+  <text x="185" y="150" text-anchor="middle" fill="#2ecc71" font-size="11" font-weight="bold">1. POST /auth/login</text>
+
+  <!-- 2. Frontend -> API: Login Request -->
+  <line x1="281" y1="178" x2="444" y2="178" stroke="#3498db" stroke-width="2" marker-end="url(#arrowRB)"/>
+  <text x="360" y="173" text-anchor="middle" fill="#3498db" font-size="11">2. loginRequest(email, pwd)</text>
+
+  <!-- 3. API -> DB: findUser -->
+  <line x1="456" y1="200" x2="614" y2="200" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowRO)"/>
+  <text x="535" y="195" text-anchor="middle" fill="#e67e22" font-size="11">3. findUser(email)</text>
+
+  <!-- 4. DB -> API: user data -->
+  <line x1="614" y1="220" x2="456" y2="220" stroke="#9b59b6" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowRP)"/>
+  <text x="535" y="215" text-anchor="middle" fill="#9b59b6" font-size="11">4. userData</text>
+
+  <!-- 5. API -> Frontend: JWT Token -->
+  <line x1="444" y1="245" x2="281" y2="245" stroke="#e67e22" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowLB)"/>
+  <text x="360" y="240" text-anchor="middle" fill="#aaa" font-size="11">5. JWT Token</text>
+
+  <!-- 6. Frontend -> Buyer: Show Dashboard -->
+  <line x1="269" y1="268" x2="116" y2="268" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowLG)"/>
+  <text x="185" y="263" text-anchor="middle" fill="#aaa" font-size="11">6. Show Dashboard</text>
+
+  <!-- Separator -->
+  <line x1="75" y1="285" x2="1030" y2="285" stroke="#fff" stroke-width="0.5" stroke-opacity="0.1"/>
+  <rect x="75" y="287" width="145" height="22" rx="4" fill="#1a3a2a" stroke="#2ecc71" stroke-width="1"/>
+  <text x="148" y="302" text-anchor="middle" fill="#2ecc71" font-size="11">Browse Products</text>
+
+  <!-- 7. Buyer -> Frontend: GET /products -->
+  <line x1="116" y1="320" x2="269" y2="320" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowRG)"/>
+  <text x="185" y="315" text-anchor="middle" fill="#2ecc71" font-size="11" font-weight="bold">7. GET /products</text>
+
+  <!-- 8. Frontend -> API -->
+  <line x1="281" y1="340" x2="444" y2="340" stroke="#3498db" stroke-width="2" marker-end="url(#arrowRB)"/>
+  <text x="360" y="335" text-anchor="middle" fill="#3498db" font-size="11">8. fetchProducts()</text>
+
+  <!-- 9. API -> DB -->
+  <line x1="456" y1="360" x2="614" y2="360" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowRO)"/>
+  <text x="535" y="355" text-anchor="middle" fill="#e67e22" font-size="11">9. Product.find()</text>
+
+  <!-- 10. DB -> API -->
+  <line x1="614" y1="380" x2="456" y2="380" stroke="#9b59b6" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowRP)"/>
+  <text x="535" y="374" text-anchor="middle" fill="#9b59b6" font-size="11">10. [products]</text>
+
+  <!-- 11. API -> Frontend -->
+  <line x1="444" y1="400" x2="281" y2="400" stroke="#e67e22" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowLB)"/>
+  <text x="360" y="394" text-anchor="middle" fill="#aaa" font-size="11">11. products JSON</text>
+
+  <!-- 12. Buyer -> Frontend: Place Order -->
+  <rect x="75" y="415" width="145" height="22" rx="4" fill="#1a3a2a" stroke="#2ecc71" stroke-width="1"/>
+  <text x="148" y="430" text-anchor="middle" fill="#2ecc71" font-size="11">Place Order</text>
+
+  <line x1="116" y1="450" x2="269" y2="450" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowRG)"/>
+  <text x="185" y="445" text-anchor="middle" fill="#2ecc71" font-size="11" font-weight="bold">12. POST /orders</text>
+
+  <!-- 13 Frontend -> API -->
+  <line x1="281" y1="470" x2="444" y2="470" stroke="#3498db" stroke-width="2" marker-end="url(#arrowRB)"/>
+  <text x="355" y="464" text-anchor="middle" fill="#3498db" font-size="11">13. createOrder(data, JWT)</text>
+
+  <!-- 14 API verifies JWT -->
+  <rect x="430" y="478" width="38" height="20" rx="3" fill="#2a1a00" stroke="#e67e22" stroke-width="1"/>
+  <text x="449" y="492" text-anchor="middle" fill="#e67e22" font-size="9">verifyJWT</text>
+
+  <!-- 15 API -> DB: findProduct -->
+  <line x1="456" y1="510" x2="614" y2="510" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowRO)"/>
+  <text x="535" y="504" text-anchor="middle" fill="#e67e22" font-size="11">14. Product.findById()</text>
+
+  <!-- 16 DB returns product -->
+  <line x1="614" y1="530" x2="456" y2="530" stroke="#9b59b6" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowRP)"/>
+  <text x="535" y="524" text-anchor="middle" fill="#9b59b6" font-size="11">15. product data</text>
+
+  <!-- 17 API calculates total & saves -->
+  <rect x="430" y="538" width="38" height="20" rx="3" fill="#2a1a00" stroke="#e67e22" stroke-width="1"/>
+  <text x="449" y="552" text-anchor="middle" fill="#e67e22" font-size="9">calc price</text>
+
+  <!-- 18 API -> DB: save order -->
+  <line x1="456" y1="568" x2="614" y2="568" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowRO)"/>
+  <text x="535" y="562" text-anchor="middle" fill="#e67e22" font-size="11">16. Order.save()</text>
+
+  <!-- 19 DB returns order -->
+  <line x1="614" y1="588" x2="456" y2="588" stroke="#9b59b6" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowRP)"/>
+  <text x="535" y="582" text-anchor="middle" fill="#9b59b6" font-size="11">17. order saved</text>
+
+  <!-- 20 API -> Farmer: Notify -->
+  <line x1="456" y1="610" x2="784" y2="610" stroke="#1abc9c" stroke-width="2" marker-end="url(#arrowRC)"/>
+  <text x="618" y="605" text-anchor="middle" fill="#1abc9c" font-size="11">18. notifyFarmer(orderId)</text>
+
+  <!-- 21 Farmer -> API: Accept -->
+  <line x1="784" y1="640" x2="456" y2="640" stroke="#1abc9c" stroke-width="2" marker-end="url(#arrowRO)"/>
+  <text x="620" y="634" text-anchor="middle" fill="#1abc9c" font-size="11">19. PUT /orders/:id/status (accepted)</text>
+
+  <!-- 22 API -> DB: update status -->
+  <line x1="456" y1="665" x2="614" y2="665" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowRO)"/>
+  <text x="535" y="659" text-anchor="middle" fill="#e67e22" font-size="11">20. Order.save(accepted)</text>
+
+  <!-- DB response -->
+  <line x1="614" y1="685" x2="456" y2="685" stroke="#9b59b6" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowRP)"/>
+  <text x="535" y="679" text-anchor="middle" fill="#9b59b6" font-size="11">21. updated order</text>
+
+  <!-- Notify transporter -->
+  <line x1="456" y1="710" x2="959" y2="710" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowR)"/>
+  <text x="705" y="704" text-anchor="middle" fill="#e74c3c" font-size="11">22. notifyTransporter(orderId)</text>
+
+  <!-- Transporter accepts -->
+  <line x1="959" y1="740" x2="456" y2="740" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowRO)"/>
+  <text x="705" y="734" text-anchor="middle" fill="#e74c3c" font-size="11">23. PUT /orders/:id/accept</text>
+
+  <!-- API -> DB update transporter -->
+  <line x1="456" y1="760" x2="614" y2="760" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowRO)"/>
+  <text x="535" y="754" text-anchor="middle" fill="#e67e22" font-size="11">24. assign transporter</text>
+
+  <!-- Final response to buyer -->
+  <line x1="614" y1="785" x2="456" y2="785" stroke="#9b59b6" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowRP)"/>
+  <line x1="444" y1="810" x2="281" y2="810" stroke="#e67e22" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowLB)"/>
+  <line x1="269" y1="835" x2="116" y2="835" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowLG)"/>
+  <text x="535" y="780" text-anchor="middle" fill="#9b59b6" font-size="11">25. order data</text>
+  <text x="360" y="805" text-anchor="middle" fill="#aaa" font-size="11">26. order response</text>
+  <text x="185" y="830" text-anchor="middle" fill="#aaa" font-size="11">27. Show order status</text>
+
+  <!-- Delivery confirmed -->
+  <line x1="116" y1="860" x2="269" y2="860" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowRG)"/>
+  <text x="185" y="854" text-anchor="middle" fill="#2ecc71" font-size="11" font-weight="bold">28. Confirm Delivery</text>
+
+  <line x1="281" y1="880" x2="444" y2="880" stroke="#3498db" stroke-width="2" marker-end="url(#arrowRB)"/>
+  <text x="360" y="875" text-anchor="middle" fill="#3498db" font-size="11">29. PUT /orders/:id/status (delivered)</text>
+
+  <line x1="444" y1="905" x2="281" y2="905" stroke="#e67e22" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowLB)"/>
+  <line x1="269" y1="930" x2="116" y2="930" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowLG)"/>
+  <text x="360" y="900" text-anchor="middle" fill="#aaa" font-size="11">30. 200 OK</text>
+  <text x="185" y="924" text-anchor="middle" fill="#aaa" font-size="11">31. Transaction complete</text>
+</svg>

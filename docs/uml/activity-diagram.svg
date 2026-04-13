@@ -1,0 +1,196 @@
+<svg viewBox="0 0 1000 1100" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f2027"/>
+      <stop offset="100%" style="stop-color:#203a43"/>
+    </linearGradient>
+    <linearGradient id="actGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#27ae60"/>
+      <stop offset="100%" style="stop-color:#2ecc71"/>
+    </linearGradient>
+    <linearGradient id="actBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2980b9"/>
+      <stop offset="100%" style="stop-color:#3498db"/>
+    </linearGradient>
+    <linearGradient id="actOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d35400"/>
+      <stop offset="100%" style="stop-color:#e67e22"/>
+    </linearGradient>
+    <linearGradient id="actPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8e44ad"/>
+      <stop offset="100%" style="stop-color:#9b59b6"/>
+    </linearGradient>
+    <linearGradient id="actRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c0392b"/>
+      <stop offset="100%" style="stop-color:#e74c3c"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto">
+      <polygon points="0 0, 10 0, 5 7" fill="#888"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto">
+      <polygon points="0 0, 10 0, 5 7" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto">
+      <polygon points="0 0, 10 0, 5 7" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto">
+      <polygon points="0 0, 10 0, 5 7" fill="#e67e22"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto">
+      <polygon points="0 0, 10 0, 5 7" fill="#9b59b6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1100" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="500" y="38" text-anchor="middle" fill="#2ecc71" font-size="22" font-weight="bold" filter="url(#glow)">AgroConnect – Activity Diagram (Order Flow)</text>
+  <line x1="60" y1="50" x2="940" y2="50" stroke="#2ecc71" stroke-width="1.5" stroke-opacity="0.4"/>
+
+  <!-- Swim Lane Headers -->
+  <rect x="60" y="62" width="210" height="32" rx="5" fill="#1a3a2a" stroke="#2ecc71" stroke-width="1.5"/>
+  <text x="165" y="83" text-anchor="middle" fill="#2ecc71" font-size="13" font-weight="bold">Buyer</text>
+
+  <rect x="280" y="62" width="210" height="32" rx="5" fill="#0d1520" stroke="#3498db" stroke-width="1.5"/>
+  <text x="385" y="83" text-anchor="middle" fill="#3498db" font-size="13" font-weight="bold">System</text>
+
+  <rect x="500" y="62" width="210" height="32" rx="5" fill="#1f130a" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="605" y="83" text-anchor="middle" fill="#e67e22" font-size="13" font-weight="bold">Farmer</text>
+
+  <rect x="720" y="62" width="210" height="32" rx="5" fill="#160d20" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="825" y="83" text-anchor="middle" fill="#9b59b6" font-size="13" font-weight="bold">Transporter</text>
+
+  <!-- Swim Lane Vertical Lines -->
+  <line x1="165" y1="94" x2="165" y2="1090" stroke="#2ecc71" stroke-width="1" stroke-opacity="0.2"/>
+  <line x1="385" y1="94" x2="385" y2="1090" stroke="#3498db" stroke-width="1" stroke-opacity="0.2"/>
+  <line x1="605" y1="94" x2="605" y2="1090" stroke="#e67e22" stroke-width="1" stroke-opacity="0.2"/>
+  <line x1="825" y1="94" x2="825" y2="1090" stroke="#9b59b6" stroke-width="1" stroke-opacity="0.2"/>
+
+  <!-- ===== START NODE ===== -->
+  <circle cx="500" cy="125" r="18" fill="#2ecc71" filter="url(#shadow)"/>
+  <circle cx="500" cy="125" r="11" fill="#0f2027"/>
+  <circle cx="500" cy="125" r="6" fill="#2ecc71"/>
+  <line x1="500" y1="143" x2="500" y2="162" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ===== STEP 1: Login ===== -->
+  <rect x="80" y="165" width="165" height="42" rx="21" fill="url(#actGreen)" filter="url(#shadow)"/>
+  <text x="163" y="192" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Login / Register</text>
+  <line x1="163" y1="207" x2="163" y2="230" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ===== STEP 2: Browse Products ===== -->
+  <rect x="80" y="233" width="165" height="42" rx="21" fill="url(#actGreen)" filter="url(#shadow)"/>
+  <text x="163" y="260" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Browse Products</text>
+  <line x1="163" y1="275" x2="163" y2="298" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ===== STEP 3: Select Product ===== -->
+  <rect x="80" y="301" width="165" height="42" rx="21" fill="url(#actGreen)" filter="url(#shadow)"/>
+  <text x="163" y="328" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Select Product</text>
+  <line x1="163" y1="343" x2="163" y2="365" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ===== STEP 4: Place Order ===== -->
+  <rect x="80" y="368" width="165" height="42" rx="21" fill="url(#actGreen)" filter="url(#shadow)"/>
+  <text x="163" y="395" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Place Order</text>
+  <line x1="248" y1="389" x2="300" y2="389" stroke="#888" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- ===== SYSTEM: Validate Order ===== -->
+  <!-- Decision Diamond -->
+  <polygon points="385,370 430,389 385,408 340,389" fill="#1e3a50" stroke="#3498db" stroke-width="2" filter="url(#shadow)"/>
+  <text x="385" y="393" text-anchor="middle" fill="#3498db" font-size="11" font-weight="bold">Valid?</text>
+
+  <!-- YES path -->
+  <line x1="385" y1="408" x2="385" y2="440" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="393" y="428" fill="#2ecc71" font-size="11">Yes</text>
+
+  <!-- NO path -->
+  <line x1="340" y1="389" x2="190" y2="389" stroke="#e74c3c" stroke-width="2"/>
+  <line x1="190" y1="389" x2="163" y2="370" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="240" y="382" fill="#e74c3c" font-size="11">No</text>
+
+  <!-- ===== SYSTEM: Save Order ===== -->
+  <rect x="300" y="443" width="165" height="42" rx="21" fill="url(#actBlue)" filter="url(#shadow)"/>
+  <text x="383" y="470" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Save Order</text>
+  <line x1="383" y1="485" x2="383" y2="510" stroke="#888" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- ===== SYSTEM: Notify Farmer ===== -->
+  <rect x="300" y="513" width="165" height="42" rx="21" fill="url(#actBlue)" filter="url(#shadow)"/>
+  <text x="383" y="540" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Notify Farmer</text>
+  <line x1="465" y1="534" x2="520" y2="534" stroke="#888" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- ===== FARMER: Decision ===== -->
+  <polygon points="605,514 655,534 605,554 555,534" fill="#2a1500" stroke="#e67e22" stroke-width="2" filter="url(#shadow)"/>
+  <text x="605" y="538" text-anchor="middle" fill="#e67e22" font-size="11" font-weight="bold">Accept?</text>
+
+  <!-- Accept YES -->
+  <line x1="605" y1="554" x2="605" y2="585" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="613" y="573" fill="#2ecc71" font-size="11">Yes</text>
+
+  <!-- Reject NO -->
+  <line x1="655" y1="534" x2="750" y2="534" stroke="#e74c3c" stroke-width="2"/>
+  <line x1="750" y1="534" x2="750" y2="580" stroke="#e74c3c" stroke-width="2"/>
+  <text x="695" y="527" fill="#e74c3c" font-size="11">No</text>
+  <rect x="690" y="583" width="130" height="42" rx="21" fill="url(#actRed)" filter="url(#shadow)"/>
+  <text x="755" y="610" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Notify Buyer</text>
+  <text x="755" y="624" text-anchor="middle" fill="white" font-size="10">(Rejected)</text>
+
+  <!-- ===== FARMER: Update status accepted ===== -->
+  <rect x="520" y="588" width="165" height="42" rx="21" fill="url(#actOrange)" filter="url(#shadow)"/>
+  <text x="603" y="607" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Update Status:</text>
+  <text x="603" y="622" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Accepted</text>
+  <line x1="603" y1="630" x2="603" y2="655" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <!-- ===== SYSTEM: Notify Transporter ===== -->
+  <rect x="300" y="658" width="165" height="42" rx="21" fill="url(#actBlue)" filter="url(#shadow)"/>
+  <text x="383" y="677" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Notify Available</text>
+  <text x="383" y="693" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Transporters</text>
+  <!-- line from farmer to system -->
+  <line x1="520" y1="675" x2="465" y2="675" stroke="#888" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <line x1="383" y1="700" x2="383" y2="725" stroke="#888" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- ===== TRANSPORTER: Accept Delivery ===== -->
+  <rect x="740" y="728" width="165" height="42" rx="21" fill="url(#actPurple)" filter="url(#shadow)"/>
+  <text x="823" y="755" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Accept Delivery</text>
+  <!-- connecting line from system to transporter -->
+  <line x1="465" y1="737" x2="740" y2="749" stroke="#888" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowDown)"/>
+  <line x1="823" y1="770" x2="823" y2="795" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrowPurple)"/>
+
+  <!-- ===== TRANSPORTER: In Transit ===== -->
+  <rect x="740" y="798" width="165" height="42" rx="21" fill="url(#actPurple)" filter="url(#shadow)"/>
+  <text x="823" y="817" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Update Status:</text>
+  <text x="823" y="832" text-anchor="middle" fill="white" font-size="12" font-weight="bold">In-Transit</text>
+  <line x1="823" y1="840" x2="823" y2="865" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrowPurple)"/>
+
+  <!-- ===== TRANSPORTER: Delivered ===== -->
+  <rect x="740" y="868" width="165" height="42" rx="21" fill="url(#actPurple)" filter="url(#shadow)"/>
+  <text x="823" y="887" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Update Status:</text>
+  <text x="823" y="902" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Delivered</text>
+  <line x1="740" y1="889" x2="300" y2="889" stroke="#888" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="300" y1="889" x2="248" y2="930" stroke="#888" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ===== BUYER: Confirm Delivery ===== -->
+  <rect x="80" y="933" width="165" height="42" rx="21" fill="url(#actGreen)" filter="url(#shadow)"/>
+  <text x="163" y="960" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Confirm Delivery</text>
+  <line x1="163" y1="975" x2="163" y2="998" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ===== BUYER: Rate Transaction ===== -->
+  <rect x="80" y="1001" width="165" height="42" rx="21" fill="url(#actGreen)" filter="url(#shadow)"/>
+  <text x="163" y="1028" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Rate Transaction</text>
+  <line x1="163" y1="1043" x2="500" y2="1060" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ===== END NODE ===== -->
+  <circle cx="500" cy="1068" r="18" fill="#2ecc71" filter="url(#shadow)"/>
+  <circle cx="500" cy="1068" r="13" fill="#0f2027"/>
+  <circle cx="500" cy="1068" r="6" fill="#2ecc71"/>
+
+  <!-- START label -->
+  <text x="538" y="130" fill="#2ecc71" font-size="11">START</text>
+  <!-- END label -->
+  <text x="525" y="1073" fill="#2ecc71" font-size="11">END</text>
+</svg>

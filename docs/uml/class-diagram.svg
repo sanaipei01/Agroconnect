@@ -1,0 +1,216 @@
+<svg viewBox="0 0 1100 820" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f2027"/>
+      <stop offset="100%" style="stop-color:#203a43"/>
+    </linearGradient>
+    <linearGradient id="headerUser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#27ae60"/>
+      <stop offset="100%" style="stop-color:#2ecc71"/>
+    </linearGradient>
+    <linearGradient id="headerProduct" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2980b9"/>
+      <stop offset="100%" style="stop-color:#3498db"/>
+    </linearGradient>
+    <linearGradient id="headerOrder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d35400"/>
+      <stop offset="100%" style="stop-color:#e67e22"/>
+    </linearGradient>
+    <linearGradient id="headerDelivery" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8e44ad"/>
+      <stop offset="100%" style="stop-color:#9b59b6"/>
+    </linearGradient>
+    <linearGradient id="headerReview" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c0392b"/>
+      <stop offset="100%" style="stop-color:#e74c3c"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="3" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#888"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2ecc71"/>
+    </marker>
+    <marker id="diamond" markerWidth="12" markerHeight="8" refX="0" refY="4" orient="auto">
+      <polygon points="0 4, 6 0, 12 4, 6 8" fill="none" stroke="#888" stroke-width="1.5"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="820" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="550" y="38" text-anchor="middle" fill="#2ecc71" font-size="22" font-weight="bold" filter="url(#glow)">AgroConnect – Class Diagram</text>
+  <line x1="80" y1="50" x2="1020" y2="50" stroke="#2ecc71" stroke-width="1.5" stroke-opacity="0.4"/>
+
+  <!-- ===== USER CLASS ===== -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="70" width="220" height="220" rx="8" fill="#0d1f12" stroke="#2ecc71" stroke-width="2"/>
+    <rect x="60" y="70" width="220" height="40" rx="8" fill="url(#headerUser)"/>
+    <rect x="60" y="102" width="220" height="8" fill="url(#headerUser)"/>
+    <text x="170" y="96" text-anchor="middle" fill="white" font-size="14" font-weight="bold">«entity» User</text>
+    <line x1="60" y1="110" x2="280" y2="110" stroke="#2ecc71" stroke-width="1.5"/>
+    <!-- Attributes -->
+    <text x="75" y="132" fill="#a8e6c0" font-size="12">– _id : ObjectId</text>
+    <text x="75" y="152" fill="#a8e6c0" font-size="12">– name : String</text>
+    <text x="75" y="172" fill="#a8e6c0" font-size="12">– email : String</text>
+    <text x="75" y="192" fill="#a8e6c0" font-size="12">– password : String (hashed)</text>
+    <text x="75" y="212" fill="#a8e6c0" font-size="12">– role : Enum</text>
+    <text x="90" y="226" fill="#6ec98a" font-size="10">  farmer | buyer | transporter</text>
+    <text x="75" y="246" fill="#a8e6c0" font-size="12">– createdAt : Date</text>
+    <line x1="60" y1="258" x2="280" y2="258" stroke="#2ecc71" stroke-width="1" stroke-dasharray="4,3"/>
+    <!-- Methods -->
+    <text x="75" y="276" fill="#d4f5e2" font-size="12">+ register() : void</text>
+    <text x="75" y="293" fill="#d4f5e2" font-size="12">+ login() : Token</text>
+    <text x="75" y="310" fill="#d4f5e2" font-size="12">+ matchPassword() : Boolean</text>
+  </g>
+
+  <!-- ===== PRODUCT CLASS ===== -->
+  <g filter="url(#shadow)">
+    <rect x="340" y="70" width="230" height="230" rx="8" fill="#0d1520" stroke="#3498db" stroke-width="2"/>
+    <rect x="340" y="70" width="230" height="40" rx="8" fill="url(#headerProduct)"/>
+    <rect x="340" y="102" width="230" height="8" fill="url(#headerProduct)"/>
+    <text x="455" y="96" text-anchor="middle" fill="white" font-size="14" font-weight="bold">«entity» Product</text>
+    <line x1="340" y1="110" x2="570" y2="110" stroke="#3498db" stroke-width="1.5"/>
+    <text x="355" y="132" fill="#a8d4f5" font-size="12">– _id : ObjectId</text>
+    <text x="355" y="152" fill="#a8d4f5" font-size="12">– name : String</text>
+    <text x="355" y="172" fill="#a8d4f5" font-size="12">– quantity : Number</text>
+    <text x="355" y="192" fill="#a8d4f5" font-size="12">– price : Number</text>
+    <text x="355" y="212" fill="#a8d4f5" font-size="12">– location : String</text>
+    <text x="355" y="232" fill="#a8d4f5" font-size="12">– availability : Enum</text>
+    <text x="370" y="246" fill="#7ab8e8" font-size="10">  Available | Unavailable</text>
+    <text x="355" y="262" fill="#a8d4f5" font-size="12">– farmer : ObjectId (ref User)</text>
+    <line x1="340" y1="275" x2="570" y2="275" stroke="#3498db" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="355" y="292" fill="#d4eeff" font-size="12">+ createListing() : void</text>
+    <text x="355" y="308" fill="#d4eeff" font-size="12">+ updateProduct() : void</text>
+  </g>
+
+  <!-- ===== ORDER CLASS ===== -->
+  <g filter="url(#shadow)">
+    <rect x="620" y="70" width="240" height="270" rx="8" fill="#1f130a" stroke="#e67e22" stroke-width="2"/>
+    <rect x="620" y="70" width="240" height="40" rx="8" fill="url(#headerOrder)"/>
+    <rect x="620" y="102" width="240" height="8" fill="url(#headerOrder)"/>
+    <text x="740" y="96" text-anchor="middle" fill="white" font-size="14" font-weight="bold">«entity» Order</text>
+    <line x1="620" y1="110" x2="860" y2="110" stroke="#e67e22" stroke-width="1.5"/>
+    <text x="635" y="132" fill="#f5d0a8" font-size="12">– _id : ObjectId</text>
+    <text x="635" y="152" fill="#f5d0a8" font-size="12">– product : ObjectId (ref Product)</text>
+    <text x="635" y="172" fill="#f5d0a8" font-size="12">– buyer : ObjectId (ref User)</text>
+    <text x="635" y="192" fill="#f5d0a8" font-size="12">– quantity : Number</text>
+    <text x="635" y="212" fill="#f5d0a8" font-size="12">– deliveryLocation : String</text>
+    <text x="635" y="232" fill="#f5d0a8" font-size="12">– pickupLocation : String</text>
+    <text x="635" y="252" fill="#f5d0a8" font-size="12">– totalPrice : Number</text>
+    <text x="635" y="272" fill="#f5d0a8" font-size="12">– status : Enum</text>
+    <text x="650" y="285" fill="#d4935a" font-size="10">  pending|accepted|in-transit</text>
+    <text x="650" y="298" fill="#d4935a" font-size="10">  |delivered|cancelled</text>
+    <text x="635" y="315" fill="#f5d0a8" font-size="12">– transporter : ObjectId (ref User)</text>
+    <line x1="620" y1="328" x2="860" y2="328" stroke="#e67e22" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="635" y="344" fill="#fff0e0" font-size="12">+ placeOrder() : void</text>
+    <text x="635" y="360" fill="#fff0e0" font-size="12">+ cancelOrder() : void</text>
+  </g>
+
+  <!-- ===== DELIVERY CLASS ===== -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="440" width="230" height="200" rx="8" fill="#160d20" stroke="#9b59b6" stroke-width="2"/>
+    <rect x="60" y="440" width="230" height="40" rx="8" fill="url(#headerDelivery)"/>
+    <rect x="60" y="472" width="230" height="8" fill="url(#headerDelivery)"/>
+    <text x="175" y="466" text-anchor="middle" fill="white" font-size="14" font-weight="bold">«entity» Delivery</text>
+    <line x1="60" y1="480" x2="290" y2="480" stroke="#9b59b6" stroke-width="1.5"/>
+    <text x="75" y="502" fill="#d4a8f5" font-size="12">– deliveryId : ObjectId</text>
+    <text x="75" y="522" fill="#d4a8f5" font-size="12">– order : ObjectId (ref Order)</text>
+    <text x="75" y="542" fill="#d4a8f5" font-size="12">– transporter : ObjectId (ref User)</text>
+    <text x="75" y="562" fill="#d4a8f5" font-size="12">– status : Enum</text>
+    <text x="90" y="576" fill="#a87dd4" font-size="10">  in-transit | delivered</text>
+    <text x="75" y="594" fill="#d4a8f5" font-size="12">– estimatedTime : Date</text>
+    <line x1="60" y1="608" x2="290" y2="608" stroke="#9b59b6" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="75" y="626" fill="#ede0ff" font-size="12">+ acceptDelivery() : void</text>
+    <text x="75" y="643" fill="#ede0ff" font-size="12">+ updateStatus() : void</text>
+  </g>
+
+  <!-- ===== REVIEW CLASS ===== -->
+  <g filter="url(#shadow)">
+    <rect x="340" y="440" width="230" height="200" rx="8" fill="#200d0d" stroke="#e74c3c" stroke-width="2"/>
+    <rect x="340" y="440" width="230" height="40" rx="8" fill="url(#headerReview)"/>
+    <rect x="340" y="472" width="230" height="8" fill="url(#headerReview)"/>
+    <text x="455" y="466" text-anchor="middle" fill="white" font-size="14" font-weight="bold">«entity» Review</text>
+    <line x1="340" y1="480" x2="570" y2="480" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="355" y="502" fill="#f5a8a8" font-size="12">– reviewId : ObjectId</text>
+    <text x="355" y="522" fill="#f5a8a8" font-size="12">– reviewer : ObjectId (ref User)</text>
+    <text x="355" y="542" fill="#f5a8a8" font-size="12">– targetUser : ObjectId (ref User)</text>
+    <text x="355" y="562" fill="#f5a8a8" font-size="12">– rating : Number (1-5)</text>
+    <text x="355" y="582" fill="#f5a8a8" font-size="12">– comment : String</text>
+    <text x="355" y="602" fill="#f5a8a8" font-size="12">– createdAt : Date</text>
+    <line x1="340" y1="616" x2="570" y2="616" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="355" y="634" fill="#ffe0e0" font-size="12">+ submitReview() : void</text>
+    <text x="355" y="651" fill="#ffe0e0" font-size="12">+ getAverageRating() : Float</text>
+  </g>
+
+  <!-- ===== AUTH/MIDDLEWARE CLASS ===== -->
+  <g filter="url(#shadow)">
+    <rect x="620" y="450" width="230" height="150" rx="8" fill="#0d1a1a" stroke="#1abc9c" stroke-width="2"/>
+    <rect x="620" y="450" width="230" height="40" rx="8" fill="#16a085"/>
+    <rect x="620" y="482" width="230" height="8" fill="#16a085"/>
+    <text x="735" y="476" text-anchor="middle" fill="white" font-size="14" font-weight="bold">«middleware» Auth</text>
+    <line x1="620" y1="490" x2="850" y2="490" stroke="#1abc9c" stroke-width="1.5"/>
+    <text x="635" y="512" fill="#a8f5ec" font-size="12">– jwtSecret : String</text>
+    <text x="635" y="532" fill="#a8f5ec" font-size="12">– tokenExpiry : String</text>
+    <line x1="620" y1="548" x2="850" y2="548" stroke="#1abc9c" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="635" y="568" fill="#d4fff9" font-size="12">+ verifyToken() : Boolean</text>
+    <text x="635" y="588" fill="#d4fff9" font-size="12">+ authorize(role) : void</text>
+  </g>
+
+  <!-- ===== RELATIONSHIP LINES ===== -->
+  <!-- User ——< Product (one to many: farmer creates products) -->
+  <line x1="280" y1="185" x2="340" y2="185" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="295" y="178" fill="#2ecc71" font-size="10">1</text>
+  <text x="325" y="178" fill="#2ecc71" font-size="10">*</text>
+  <text x="296" y="195" fill="#aaa" font-size="10">creates</text>
+
+  <!-- Product ——< Order -->
+  <line x1="570" y1="200" x2="620" y2="200" stroke="#3498db" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="576" y="193" fill="#3498db" font-size="10">1</text>
+  <text x="607" y="193" fill="#3498db" font-size="10">*</text>
+  <text x="577" y="212" fill="#aaa" font-size="10">in</text>
+
+  <!-- User (buyer) ——< Order -->
+  <line x1="170" y1="290" x2="170" y2="380" stroke="#3498db" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="170" y1="380" x2="620" y2="250" stroke="#3498db" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="350" y="335" fill="#3498db" font-size="10">places</text>
+
+  <!-- Order —— Delivery -->
+  <line x1="680" y1="340" x2="680" y2="400" stroke="#9b59b6" stroke-width="2"/>
+  <line x1="680" y1="400" x2="175" y2="440" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="430" y="420" fill="#9b59b6" font-size="10">generates</text>
+
+  <!-- User (transporter) — Delivery -->
+  <line x1="280" y1="560" x2="340" y2="560" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="290" y="554" fill="#9b59b6" font-size="10">assigned</text>
+
+  <!-- User — Review -->
+  <line x1="280" y1="200" x2="455" y2="440" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="350" y="355" fill="#e74c3c" font-size="10">writes</text>
+
+  <!-- Auth — User -->
+  <line x1="735" y1="450" x2="735" y2="370" stroke="#1abc9c" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+  <line x1="735" y1="370" x2="280" y2="200" stroke="#1abc9c" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="600" y="395" fill="#1abc9c" font-size="10">validates</text>
+
+  <!-- Legend -->
+  <rect x="870" y="450" width="210" height="130" rx="6" fill="#0d1520" stroke="#3498db" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="975" y="470" text-anchor="middle" fill="#aaa" font-size="12" font-weight="bold">Legend</text>
+  <line x1="885" y1="490" x2="920" y2="490" stroke="#2ecc71" stroke-width="2"/>
+  <text x="930" y="494" fill="#ccc" font-size="11">Association (1..*)</text>
+  <line x1="885" y1="512" x2="920" y2="512" stroke="#888" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="930" y="516" fill="#ccc" font-size="11">Dependency</text>
+  <rect x="885" y="530" width="12" height="12" fill="url(#headerUser)" rx="2"/>
+  <text x="904" y="541" fill="#ccc" font-size="11">Class</text>
+  <line x1="885" y1="558" x2="920" y2="558" stroke="#888" stroke-width="1.5"/>
+  <text x="930" y="562" fill="#ccc" font-size="11">Attribute section</text>
+  <line x1="885" y1="574" x2="920" y2="574" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="930" y="578" fill="#ccc" font-size="11">Method section</text>
+</svg>

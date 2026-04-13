@@ -2,7 +2,7 @@
 
 ## Overview
 
-AgroConnect is a **web-based digital marketplace** built on a classic three-tier architecture: a browser-based frontend, a RESTful API backend, and a MongoDB database. The system connects four actor types — Farmers, Buyers, Transporters, and Admins — through a secure, role-based platform.
+AgroConnect is a **web-based digital marketplace** built on a classic three-tier architecture: a browser-based frontend, a RESTful API backend, and a MongoDB database. The system connects four actor types  Farmers, Buyers, Transporters, and Admins through a secure, role-based platform.
 
 ---
 
@@ -92,7 +92,7 @@ Every protected route passes through this middleware:
 3. Decodes `{ id, role }` and attaches it to `req.user`.
 4. Rejects requests with `401 Unauthorized` if token is missing or invalid.
 
-This enables **Role-Based Access Control (RBAC)** throughout the API — each route handler checks `req.user.role` or compares `req.user.id` to resource owner IDs before allowing mutations.
+This enables **Role-Based Access Control (RBAC)** throughout the API  each route handler checks `req.user.role` or compares `req.user.id` to resource owner IDs before allowing mutations.
 
 ---
 
